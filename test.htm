@@ -1,0 +1,49 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>TimelineChartElement Test Page</title>
+		<meta charset="utf-8">
+		<script src="TimelineChartElement.js"></script>
+		<script>
+		window.onload = function() {
+			var data = {
+				type : "date",
+				start: new Date("1/1/2012 00:00"),
+				end: new Date("1/30/2012 23:59"), //whole month
+				start_value : false,
+				cov : [
+					new Date("1/1/2012 08:00"),
+					new Date("1/1/2012 17:30"),
+					new Date("1/2/2012 08:00"),
+					new Date("1/2/2012 17:30"),
+					new Date("1/3/2012 08:00"),
+					new Date("1/3/2012 17:30"),
+					new Date("1/10/2012 08:00"),
+					new Date("1/10/2012 17:30"),
+					new Date("1/30/2012 08:00"),
+					new Date("1/30/2012 17:30")
+				]
+			};
+
+			var element = TimelineChartElement(data, { width: screen.width - 50, height: 12, foreColor: 'green', id : "theDateElement" } );
+			document.body.appendChild(element);
+
+			data = {
+				type : "int",
+				amount : 500,
+				start_value : true,
+				cov : [
+					200, 300, 400, 450
+				]
+			};
+
+			element = TimelineChartElement(data);
+			document.body.appendChild(element);
+		};
+		</script>
+	</head>
+	<body style="font-family: Tahoma,Arial,Sans-serif,sans">
+
+	</body>
+</html>
